@@ -54,14 +54,16 @@ class OutputView {
             return false
         }
         for (index, _) in cardStack.enumerated() {
-            print("참가자#\(index)", terminator: "\t\t")
+            print("참가자#\(index+1)", terminator: "\t\t")
+            if index == cardStack.count-2 {
+                break
+            }
         }
         print("딜러 ")
-        
         for (index, _) in cardStack[0].enumerated() {
             for player in 0..<cardStack.count {
                 print(cardStack[player][index].description, terminator: "\t\t\t")
-//                sleep(1)
+                sleep(1)
             }
             print()
         }
